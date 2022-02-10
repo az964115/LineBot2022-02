@@ -96,7 +96,7 @@ def index():
                                         "uri": f"tel:{my_phone}"
                                       }
                                   ]
-                              }
+                                }
                             }
                         ]
                 else:
@@ -172,7 +172,7 @@ def sendTextMessageToMe():
 def getNameEmojiMessage():
     lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     productId = "5ac21a8c040ab15980c9b43f"
-    name = "Jason"
+    name = "Miles"
     message = dict()
     message["type"] = "text"
     message["text"] = "".join("$" for r in range(len(name)))
