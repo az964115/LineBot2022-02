@@ -88,12 +88,12 @@ def index():
                                       {
                                         "type": "message",
                                         "label": "簡易介紹",
-                                        "url": f"link:{https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86}"
+                                        "url": f"tel:{https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86}"
                                       },
                                       {
                                         "type": "message",
                                         "label": "可可豆用途",
-                                        "url": f"link:{https://heho.com.tw/archives/78396}"
+                                        "url": f"tel:{https://heho.com.tw/archives/78396}"
                                       },
                                       {
                                         "type": "message",
@@ -317,7 +317,7 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/14591882_731833266963992_928306788179116032_n.jpg"):
+def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.jpg"):
     return getImageMessage(originalContentUrl)
 
 
