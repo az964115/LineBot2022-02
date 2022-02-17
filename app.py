@@ -52,11 +52,11 @@ def index():
                     payload["messages"] = [getTaipei101ImageMessage(),
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()]
-                elif text == "台北101圖":
+                elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "台北101影片":
                     payload["messages"] = [getMRTVideoMessage()]
-                elif text == "quoda":
+                elif text == "養一隻貓":
                     payload["messages"] = [
                             {
                                 "type": "text",
@@ -302,7 +302,7 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/14591882_731833266963992_928306788179116032_n.jpg"):
     return getImageMessage(originalContentUrl)
 
 
