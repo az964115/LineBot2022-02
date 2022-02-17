@@ -23,7 +23,7 @@ end_point = config.get('line-bot', 'end_point')
 line_login_id = config.get('line-bot', 'line_login_id')
 line_login_secret = config.get('line-bot', 'line_login_secret')
 my_phone = config.get('line-bot', 'my_phone')
-link1 = requests.get("https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86")
+link1 = "https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86"
 # link2 = "https://heho.com.tw/archives/78396"
 HEADER = {
     'Content-type': 'application/json',
