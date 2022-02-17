@@ -57,7 +57,8 @@ def index():
                 elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "簡介":
-                    payload["messages"] = [getdata()]
+#                     payload["messages"] = 
+                    reply_text = "Hello"
                 elif text == "quoda":
                     payload["messages"] = [
                             {
@@ -207,9 +208,9 @@ def getCallCarMessage(data):
     message = dict()
     return message
 
-def getdata():
-    message = TextSendMessage(text='可可樹每個果實中大約可得到20-25粒可可豆，外層是白色微甜帶酸的果肉。可可豆可經加工處理，成為可可餅、可可粉、可可脂等重要食物原料。可可豆曾被作為貨幣使用，比如瑪雅人和阿茲特克人')
-    line_bot_api.reply_message(event.reply_token, message)
+# def getdata():
+#     message = TextSendMessage(text='可可樹每個果實中大約可得到20-25粒可可豆，外層是白色微甜帶酸的果肉。可可豆可經加工處理，成為可可餅、可可粉、可可脂等重要食物原料。可可豆曾被作為貨幣使用，比如瑪雅人和阿茲特克人')
+#     line_bot_api.reply_message(event.reply_token, message)
 
 
 def getPlayStickerMessage():
