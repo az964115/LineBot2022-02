@@ -23,6 +23,8 @@ end_point = config.get('line-bot', 'end_point')
 line_login_id = config.get('line-bot', 'line_login_id')
 line_login_secret = config.get('line-bot', 'line_login_secret')
 my_phone = config.get('line-bot', 'my_phone')
+# link1 = "https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86"
+# link2 = "https://heho.com.tw/archives/78396"
 HEADER = {
     'Content-type': 'application/json',
     'Authorization': F'Bearer {config.get("line-bot", "channel_access_token")}'
@@ -52,7 +54,7 @@ def index():
                     payload["messages"] = [getTaipei101ImageMessage(),
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()]
-                elif text == "台北101圖":
+                elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "quoda":
                     payload["messages"] = [
@@ -232,7 +234,7 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.jpg"):
     return getImageMessage(originalContentUrl)
 
 
