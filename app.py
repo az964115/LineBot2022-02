@@ -23,7 +23,7 @@ end_point = config.get('line-bot', 'end_point')
 line_login_id = config.get('line-bot', 'line_login_id')
 line_login_secret = config.get('line-bot', 'line_login_secret')
 my_phone = config.get('line-bot', 'my_phone')
-# link1 = "https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86"
+link1 = requests.get("https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86")
 # link2 = "https://heho.com.tw/archives/78396"
 HEADER = {
     'Content-type': 'application/json',
@@ -77,13 +77,13 @@ def index():
                                 "altText": "This is a buttons template",
                                 "template": {
                                   "type": "buttons",
-                                  "title": "Menu",
-                                  "text": "Please select",
+                                  "title": "tc巧鋪歡迎您",
+                                  "text": "我們的功能",
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "我的名字",
-                                        "text": "我的名字"
+                                        "label": "簡易介紹",
+                                        "uri": f"tel:{link1}"
                                       },
                                       {
                                         "type": "message",
