@@ -53,7 +53,7 @@ def index():
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()]
                 elif text == "養一隻貓吧":
-                    payload["messages"] = [getTaipei101ImageMessage()]
+                    payload["messages"] = [getcat()]
                 elif text == "台北101影片":
                     payload["messages"] = [getMRTVideoMessage()]
                 elif text == "養一隻貓":
@@ -309,6 +309,12 @@ def getMRTSoundMessage():
 
 def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.jpg"):
     return getImageMessage(originalContentUrl)
+
+def getcat():
+    message = dict()
+    message["type"] = "image"
+    message["previewImageUrl"] = F"{end_point}/static/112.jpg"
+    return message
 
 
 def getImageMessage(originalContentUrl):
