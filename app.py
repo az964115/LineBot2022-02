@@ -23,8 +23,6 @@ end_point = config.get('line-bot', 'end_point')
 line_login_id = config.get('line-bot', 'line_login_id')
 line_login_secret = config.get('line-bot', 'line_login_secret')
 my_phone = config.get('line-bot', 'my_phone')
-link1 = config.get('line-bot', 'link1')
-link2 = config.get('line-bot', 'link2')
 HEADER = {
     'Content-type': 'application/json',
     'Authorization': F'Bearer {config.get("line-bot", "channel_access_token")}'
@@ -54,11 +52,9 @@ def index():
                     payload["messages"] = [getTaipei101ImageMessage(),
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()]
-                elif text == "養一隻貓吧":
-                    payload["messages"] = [getcat()]
-                elif text == "台北101影片":
-                    payload["messages"] = [getMRTVideoMessage()]
-                elif text == "養一隻貓":
+                elif text == "台北101圖":
+                    payload["messages"] = [getTaipei101ImageMessage()]
+                elif text == "quoda":
                     payload["messages"] = [
                             {
                                 "type": "text",
@@ -84,18 +80,13 @@ def index():
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "簡易介紹",
-                                        "url": f"tel:{link1}"
+                                        "label": "我的名字",
+                                        "text": "我的名字"
                                       },
                                       {
                                         "type": "message",
-                                        "label": "可可豆用途",
-                                        "url": f"tel:{link2}"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "養一隻貓吧",
-                                        "text": "養一隻貓吧"
+                                        "label": "今日確診人數",
+                                        "text": "今日確診人數"
                                       },
                                       {
                                         "type": "uri",
@@ -103,7 +94,7 @@ def index():
                                         "uri": f"tel:{my_phone}"
                                       }
                                   ]
-                                }
+                              }
                             }
                         ]
                 else:
@@ -115,7 +106,7 @@ def index():
                         ]
                 replyMessage(payload)
             elif events[0]["message"]["type"] == "location":
-                title = events[0]["message"].get("title", "")
+                title = events[0]["message"]["title"]
                 latitude = events[0]["message"]["latitude"]
                 longitude = events[0]["message"]["longitude"]
                 payload["messages"] = [getLocationConfirmMessage(title, latitude, longitude)]
@@ -179,7 +170,7 @@ def sendTextMessageToMe():
 def getNameEmojiMessage():
     lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     productId = "5ac21a8c040ab15980c9b43f"
-    name = "Jason"
+    name = "Miles"
     message = dict()
     message["type"] = "text"
     message["text"] = "".join("$" for r in range(len(name)))
@@ -197,77 +188,17 @@ def getNameEmojiMessage():
 
 
 def getCarouselMessage(data):
-    message = {
-      "type": "template",
-      "altText": "this is a image carousel template",
-      "template": {
-          "type": "image_carousel",
-          "columns": [
-              {
-                "imageUrl": F"{end_point}/static/taipei_101.jpeg",
-                "action": {
-                  "type": "postback",
-                  "label": "台北101",
-                  "data": json.dumps(data)
-                }
-              },
-              {
-                "imageUrl": F"{end_point}/static/taipei_1.jpeg",
-                "action": {
-                  "type": "postback",
-                  "label": "台北101",
-                  "data": json.dumps(data)
-                }
-              }
-          ]
-          }
-        }
+    message = dict()
     return message
 
 
 def getLocationConfirmMessage(title, latitude, longitude):
-    data = {'title': title, 'latitude': latitude, 'longitude': longitude,
-            'action': 'get_near'}
-    message = {
-      "type": "template",
-      "altText": "this is a confirm template",
-      "template": {
-          "type": "confirm",
-          "text": f"確認是否搜尋 {title} 附近地點？",
-          "actions": [
-              {
-                 "type": "postback",
-               "label": "是",
-               "data": json.dumps(data),
-               },
-              {
-                "type": "message",
-                "label": "否",
-                "text": "否"
-              }
-          ]
-      }
-    }
+    message = dict()
     return message
 
 
 def getCallCarMessage(data):
-    message = {
-      "type": "template",
-      "altText": "this is a template",
-      "template": {
-          "type": "buttons",
-          "text": f"請選擇至 {data['title']} 預約叫車時間",
-          "actions": [
-              {
-               "type": "datetimepicker",
-               "label": "預約",
-               "data": json.dumps(data),
-               "mode": "datetime"
-               }
-          ]
-      }
-    }
+    message = dict()
     return message
 
 
@@ -281,19 +212,11 @@ def getPlayStickerMessage():
 
 def getTaipei101LocationMessage():
     message = dict()
-    message["type"] = "location"
-    message["title"] = "台北101"
-    message["address"] = "110台北市信義區信義路五段7號"
-    message["latitude"] = 25.034056468449304
-    message["longitude"] = 121.56466736984362
     return message
 
 
 def getMRTVideoMessage():
     message = dict()
-    message["type"] = "video"
-    message["originalContentUrl"] = F"{end_point}/static/taipei_101_video.mp4"
-    message["previewImageUrl"] = F"{end_point}/static/taipei_101.jpeg"
     return message
 
 
@@ -309,14 +232,8 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.jpg"):
+def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
     return getImageMessage(originalContentUrl)
-
-def getcat():
-    message = dict()
-    message["type"] = "image"
-    message["previewImageUrl"] = F"{end_point}/static/112.jpg"
-    return message
 
 
 def getImageMessage(originalContentUrl):
