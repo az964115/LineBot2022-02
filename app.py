@@ -82,13 +82,15 @@ def index():
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "簡易介紹",
-                                        "uri": f"tel:{link1}"
+                                        "label": "簡介",
+                                        "text": "可可樹每個果實中大約可得到20-25粒可可豆，外層是白色微甜帶酸的果肉。可可豆可經加工處理，成為可可餅、可可粉、可可脂等重要食物原料。可可豆曾被作為貨幣使用，比如瑪雅人和阿茲特克人"
                                       },
                                       {
                                         "type": "message",
-                                        "label": "今日確診人數",
-                                        "text": "今日確診人數"
+                                        "label": "品種",
+                                        "text": "1.Criollo－產量約是總可可豆產量的3%，主要是分佈在南美洲的委內瑞拉。由於Criollo很怕蟲害，因此在栽種上相當不容易。但是不會過於酸、苦的風味，還帶有獨特的細緻香氣，是最頂級的可可豆品種。"
+                                          "2.Forastero－是市面上最常見，生產也最大量的可可豆品種，佔總可可豆產量80%以上。主要分布在西非及東南亞。無論是在澀味、苦味及酸味上都相較濃厚，巧克力味也較淡，但因為產量多的關係，因此常使用於平價巧克力。"
+                                          "3.Trintario－集合了上述口味及產量的優點。由Criollo、Forastero所混種的Trintario，原產地在加勒比海的千里達群島，口味比較濃郁厚實，帶一點果香味。由Criollo品種混搭Forastero的Trintario，在產量上也較容易栽培。"
                                       },
                                       {
                                         "type": "uri",
@@ -172,7 +174,7 @@ def sendTextMessageToMe():
 def getNameEmojiMessage():
     lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     productId = "5ac21a8c040ab15980c9b43f"
-    name = "Miles"
+    name = "Jason"
     message = dict()
     message["type"] = "text"
     message["text"] = "".join("$" for r in range(len(name)))
