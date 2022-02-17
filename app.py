@@ -82,28 +82,18 @@ def index():
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "我的名字",
-                                        "text": "我的名字"
-                                      },
-                                      {
-                                        "type": "message",
                                         "label": "簡易介紹",
-                                        "url": f"tel:{https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%8F%AF%E8%B1%86}"
+                                        "url": f"tel:{link1}"
                                       },
                                       {
                                         "type": "message",
                                         "label": "可可豆用途",
-                                        "url": f"tel:{https://heho.com.tw/archives/78396}"
+                                        "url": f"tel:{link2}"
                                       },
                                       {
                                         "type": "message",
                                         "label": "養一隻貓吧",
                                         "text": "養一隻貓吧"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "昨日確診人數",
-                                        "text": "今日確診人數"
                                       },
                                       {
                                         "type": "uri",
