@@ -181,7 +181,6 @@ def sendTextMessageToMe():
     pushMessage({})
     return 'OK'
 
-
 def getCarouselMessage(data):
     message = dict()
     return message
@@ -206,7 +205,7 @@ def getImageMessage2(originalContentUrl):
     message["previewImageUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/2.jpg" #originalContentUrl
     return message
 
-def get3(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
+def get3(originalContentUrl=F"{end_point}/static/378.jp"):
     return getImageMessage3(originalContentUrl)
 
 def getImageMessage3(originalContentUrl):
