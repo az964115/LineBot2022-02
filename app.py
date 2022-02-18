@@ -98,11 +98,11 @@ def index():
                                         "label": "TC-95%巧克力磚",
                                         "text": "TC-95%巧克力磚"
                                       },
-                                      {
-                                        "type": "message",
-                                        "label": "TC-85%巧克力磚",
-                                        "text": "TC-85%巧克力磚"
-                                      },
+#                                       {
+#                                         "type": "message",
+#                                         "label": "TC-85%巧克力磚",
+#                                         "text": "TC-85%巧克力磚"
+#                                       },
                                       {
                                         "type": "uri",
                                         "label": "聯絡我",
