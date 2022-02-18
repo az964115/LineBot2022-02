@@ -56,7 +56,8 @@ def index():
                     payload["messages"] = [{"type": "text",
                                 "text": "Hello"}]
                 elif text == "TC-綜合巧克力禮盒":
-                    payload["messages"] = ["NT$ 550"]
+                    payload["messages"] = [{"type": "text",
+                                "text": "NT$ 550"}]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
