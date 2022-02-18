@@ -48,8 +48,6 @@ def index():
 
                 if text == "我的名字":
                     payload["messages"] = [getNameEmojiMessage()]
-                elif text == "出去玩囉":
-                    payload["messages"] = [getPlayStickerMessage()]
                 elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "簡介":
@@ -58,6 +56,9 @@ def index():
                 elif text == "TC-綜合巧克力禮盒":
                     payload["messages"] = [{"type": "text",
                                 "text": "NT$ 550"}]
+                elif text == "TC-柴燒黑糖巧克力":
+                    payload["messages"] = [{"type": "text",
+                                "text": "NT$ 300"}]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -66,12 +67,17 @@ def index():
                                 "template": {
                                   "type": "buttons",
                                   "title": "tc巧鋪歡迎您",
-                                  "text": "我們的商品",
+                                  "text": "商品價格查詢",
                                   "actions": [
                                       {
                                         "type": "message",
                                         "label": "TC-綜合巧克力禮盒",
                                         "text": "TC-綜合巧克力禮盒"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-柴燒黑糖巧克力",
+                                        "text": "TC-柴燒黑糖巧克力"
                                       },
                                       {
                                         "type": "uri",
