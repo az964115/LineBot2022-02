@@ -49,7 +49,7 @@ def index():
                     payload["messages"] = [{"type": "text",
                                 "text": "開發中請稍後"}]
                 elif text == "TC-綜合巧克力禮盒":
-                    payload["messages"] = [getImageMessage(originalContentUrl),  #get1()
+                    payload["messages"] = [get1(),
                                           {"type": "text",
                                 "text": "NT$ 550"}]
                 elif text == "TC-柴燒黑糖巧克力":
@@ -158,8 +158,8 @@ def getCarouselMessage(data):
     message = dict()
     return message
 
-# def get1(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
-#     return getImageMessage(originalContentUrl)
+def get1(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
+    return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
     message = dict()
