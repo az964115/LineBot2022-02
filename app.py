@@ -158,7 +158,7 @@ def getCarouselMessage(data):
     message = dict()
     return message
 
-def get1(originalContentUrl=F"{end_point}/static/378.jpg"):
+def get1(originalContentUrl) #=F"{end_point}/static/378.jpg"):
     return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
