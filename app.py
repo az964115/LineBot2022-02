@@ -50,29 +50,12 @@ def index():
                     payload["messages"] = [getNameEmojiMessage()]
                 elif text == "出去玩囉":
                     payload["messages"] = [getPlayStickerMessage()]
-                elif text == "台北101":
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getMRTVideoMessage()]
                 elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "簡介":
-#                     payload["messages"] = 
-                    reply_text = "Hello"
-                elif text == "quoda":
-                    payload["messages"] = [
-                            {
-                                "type": "text",
-                                "text": getTotalSentMessageCount()
-                            }
-                        ]
-                elif text == "今日確診人數":
-                    payload["messages"] = [
-                            {
-                                "type": "text",
-                                "text": getTodayCovid19Message()
-                            }
-                        ]
+                    payload["messages"] = ["Hello"]
+                elif text == "TC-綜合巧克力禮盒":
+                    payload["messages"] = ["NT$ 550"]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -81,20 +64,13 @@ def index():
                                 "template": {
                                   "type": "buttons",
                                   "title": "tc巧鋪歡迎您",
-                                  "text": "我們的功能",
+                                  "text": "我們的商品",
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "簡介",
-                                        "text": "簡介"
+                                        "label": "TC-綜合巧克力禮盒(小盒/12片/65%.75%.85%)",
+                                        "text": "TC-綜合巧克力禮盒"
                                       },
-#                                       {
-#                                         "type": "message",
-#                                         "label": "品種",
-#                                         "text": "1.Criollo－產量約是總可可豆產量的3%，主要是分佈在南美洲的委內瑞拉。由於Criollo很怕蟲害，因此在栽種上相當不容易。但是不會過於酸、苦的風味，還帶有獨特的細緻香氣，是最頂級的可可豆品種。"
-#                                           "2.Forastero－是市面上最常見，生產也最大量的可可豆品種，佔總可可豆產量80%以上。主要分布在西非及東南亞。無論是在澀味、苦味及酸味上都相較濃厚，巧克力味也較淡，但因為產量多的關係，因此常使用於平價巧克力。"
-#                                           "3.Trintario－集合了上述口味及產量的優點。由Criollo、Forastero所混種的Trintario，原產地在加勒比海的千里達群島，口味比較濃郁厚實，帶一點果香味。由Criollo品種混搭Forastero的Trintario，在產量上也較容易栽培。"
-#                                       },
                                       {
                                         "type": "uri",
                                         "label": "聯絡我",
