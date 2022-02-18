@@ -49,8 +49,7 @@ def index():
                 if text == "我自己的名字":
                     payload["messages"] = [getNameEmojiMessage()]
                 elif text == "養一隻貓吧":
-                    payload["messages"] = [{"type": "image",
-                                "uri": "https://github.com/az964115/LineBot2022-02/blob/main/static/112.png?raw=true"}]
+                    payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "小組成員":
                     payload["messages"] = [{"type": "text",
                                 "text": "開發中請稍後"}]
@@ -226,12 +225,6 @@ def getMRTSoundMessage():
 
 def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.png"):
     return getImageMessage(originalContentUrl)
-
-def shop1():
-    message["type"] = "image"
-    message["originalContentUrl"] = F"{end_point}/static/112.png"
-    return getImageMessage(originalContentUrl)
-
 
 def getImageMessage(originalContentUrl):
     message = dict()
