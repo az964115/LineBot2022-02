@@ -68,6 +68,14 @@ def index():
                     payload["messages"] = [get3(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
+                elif text == "TC-75%巧克力磚":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-65%巧克力磚":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -104,9 +112,9 @@ def index():
                                         "text": "TC-85%巧克力磚"
                                       },
                                       {
-                                        "type": "uri",
-                                        "label": "聯絡我",
-                                        "uri": f"tel:{my_phone}"
+                                        "type": "message",
+                                        "label": "TC-75%巧克力磚",
+                                        "text": "TC-75%巧克力磚"
                                       }
                                   ]
                               }
