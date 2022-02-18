@@ -55,10 +55,6 @@ def index():
                 elif text == "TC-柴燒黑糖巧克力":
                     payload["messages"] = [{"type": "text",
                                 "text": "NT$ 300"}]
-                 elif text == "台北101":
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getMRTVideoMessage()]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
