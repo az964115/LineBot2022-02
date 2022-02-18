@@ -164,8 +164,8 @@ def get1(originalContentUrl=F"{end_point}/static/378.jpg"):
 def getImageMessage(originalContentUrl):
     message = dict()
     message["type"] = "image"
-    message["originalContentUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/378.jpg?raw=true" #originalContentUrl
-    message["previewImageUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/378.jpg?raw=true" #originalContentUrl
+    message["originalContentUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true" #originalContentUrl
+    message["previewImageUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true" #originalContentUrl
     return message
 
 
