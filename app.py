@@ -46,13 +46,13 @@ def index():
             if events[0]["message"]["type"] == "text":
                 text = events[0]["message"]["text"]
 
-                if text == "我的名字":
+                if text == "我自己的名字":
                     payload["messages"] = [getNameEmojiMessage()]
                 elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
-                elif text == "簡介":
+                elif text == "小組成員":
                     payload["messages"] = [{"type": "text",
-                                "text": "Hello"}]
+                                "text": "開發中請稍後"}]
                 elif text == "TC-綜合巧克力禮盒":
                     payload["messages"] = [{"type": "text",
                                 "text": "NT$ 550"}]
