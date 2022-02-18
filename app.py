@@ -53,7 +53,20 @@ def index():
                                           {"type": "text",
                                 "text": "NT$ 550"}]
                 elif text == "TC-柴燒黑糖巧克力":
-                    payload["messages"] = [{"type": "text",
+                    payload["messages"] = [get2(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-100%無糖巧克力磚":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-95%巧克力磚":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-85%巧克力磚":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "主選單":
                     payload["messages"] = [
@@ -74,6 +87,21 @@ def index():
                                         "type": "message",
                                         "label": "TC-柴燒黑糖巧克力",
                                         "text": "TC-柴燒黑糖巧克力"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-100%無糖巧克力磚",
+                                        "text": "TC-100%無糖巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-95%巧克力磚",
+                                        "text": "TC-95%巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-85%巧克力磚",
+                                        "text": "TC-85%巧克力磚"
                                       },
                                       {
                                         "type": "uri",
@@ -168,6 +196,25 @@ def getImageMessage(originalContentUrl):
     message["previewImageUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true" #originalContentUrl
     return message
 
+def get2(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
+    return getImageMessage2(originalContentUrl)
+
+def getImageMessage2(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/2.jpg" #originalContentUrl
+    message["previewImageUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/2.jpg" #originalContentUrl
+    return message
+
+def get3(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
+    return getImageMessage3(originalContentUrl)
+
+def getImageMessage3(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/3.jpg?raw=true" #originalContentUrl
+    message["previewImageUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/3.jpg?raw=true" #originalContentUrl
+    return message
 
 def replyMessage(payload):
     response = requests.post("https://api.line.me/v2/bot/message/reply",headers=HEADER,data=json.dumps(payload))
