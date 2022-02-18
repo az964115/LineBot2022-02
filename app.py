@@ -92,12 +92,12 @@ def index():
                                         "type": "message",
                                         "label": "TC-100%無糖巧克力磚",
                                         "text": "TC-100%無糖巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-95%巧克力磚",
+                                        "text": "TC-95%巧克力磚"
                                       } #,
-#                                       {
-#                                         "type": "message",
-#                                         "label": "TC-95%巧克力磚",
-#                                         "text": "TC-95%巧克力磚"
-#                                       },
 #                                       {
 #                                         "type": "message",
 #                                         "label": "TC-85%巧克力磚",
