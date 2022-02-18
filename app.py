@@ -49,7 +49,7 @@ def index():
                     payload["messages"] = [{"type": "text",
                                 "text": "開發中請稍後"}]
                 elif text == "TC-綜合巧克力禮盒":
-                    payload["messages"] = [get1(),
+                    payload["messages"] = [getImageMessage(originalContentUrl),  #get1()
                                           {"type": "text",
                                 "text": "NT$ 550"}]
                 elif text == "TC-柴燒黑糖巧克力":
