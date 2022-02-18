@@ -53,7 +53,8 @@ def index():
                 elif text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "簡介":
-                    payload["messages"] = ["Hello"]
+                    payload["messages"] = [{"type": "text",
+                                "text": "Hello"}]
                 elif text == "TC-綜合巧克力禮盒":
                     payload["messages"] = ["NT$ 550"]
                 elif text == "主選單":
@@ -68,7 +69,7 @@ def index():
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "TC-綜合巧克力禮盒(小盒/12片/65%.75%.85%)",
+                                        "label": "TC-綜合巧克力禮盒",
                                         "text": "TC-綜合巧克力禮盒"
                                       },
                                       {
