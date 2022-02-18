@@ -158,7 +158,7 @@ def getCarouselMessage(data):
     message = dict()
     return message
 
-def get1(originalContentUrl) #=F"{end_point}/static/378.jpg"):
+def get1(originalContentUrl=F"https://github.com/az964115/LineBot2022-02/blob/main/static/1.jpg?raw=true"): #{end_point}/static/378.jp
     return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
