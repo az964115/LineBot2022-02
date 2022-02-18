@@ -46,9 +46,7 @@ def index():
             if events[0]["message"]["type"] == "text":
                 text = events[0]["message"]["text"]
 
-                if text == "我自己的名字":
-                    payload["messages"] = [getNameEmojiMessage()]
-                elif text == "養一隻貓吧":
+                if text == "養一隻貓吧":
                     payload["messages"] = [getTaipei101ImageMessage()]
                 elif text == "小組成員":
                     payload["messages"] = [{"type": "text",
@@ -158,70 +156,9 @@ def sendTextMessageToMe():
     return 'OK'
 
 
-def getNameEmojiMessage():
-    lookUpStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-    productId = "5ac21a8c040ab15980c9b43f"
-    name = "Jason"
-    message = dict()
-    message["type"] = "text"
-    message["text"] = "".join("$" for r in range(len(name)))
-    emojis_list = list()
-    for i, nChar in enumerate(name):
-        emojis_list.append(
-            {
-              "index": i,
-              "productId": productId,
-              "emojiId": f"{lookUpStr.index(nChar) + 1 :03}"
-            }
-        )
-    message["emojis"] = emojis_list
-    return message
-
-
 def getCarouselMessage(data):
     message = dict()
     return message
-
-
-def getLocationConfirmMessage(title, latitude, longitude):
-    message = dict()
-    return message
-
-
-def getCallCarMessage(data):
-    message = dict()
-    return message
-
-
-def getPlayStickerMessage():
-    message = dict()
-    message["type"] = "sticker"
-    message["packageId"] = "446"
-    message["stickerId"] = "1988"
-    return message
-
-
-def getTaipei101LocationMessage():
-    message = dict()
-    return message
-
-
-def getMRTVideoMessage():
-    message = dict()
-    return message
-
-
-def getMRTSoundMessage():
-    message = dict()
-    message["type"] = "audio"
-    message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
-    import audioread
-    with audioread.audio_open('static/mrt_sound.m4a') as f:
-        # totalsec contains the length in float
-        totalsec = f.duration
-    message["duration"] = totalsec * 1000
-    return message
-
 
 def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/112.png"):
     return getImageMessage(originalContentUrl)
@@ -242,20 +179,6 @@ def replyMessage(payload):
 def pushMessage(payload):
     response = requests.post("https://api.line.me/v2/bot/message/push",headers=HEADER,data=json.dumps(payload))
     return 'OK'
-
-
-def getTotalSentMessageCount():
-    response = requests.get("https://api.line.me/v2/bot/message/quota/consumption",headers=HEADER)
-    return response.json()["totalUsage"]
-
-
-def getTodayCovid19Message():
-    response = requests.get("https://covid-19.nchc.org.tw/api/covid19?CK=covid-19@nchc.org.tw&querydata=4001&limited=TWN")
-    date = response.json()[0]["a04"]
-    total_count = response.json()[0]["a05"]
-    count = response.json()[0]["a06"]
-    return F"日期：{date}, 人數：{count}, 確診總人數：{total_count}"
-
 
 def allowed_file(filename):
     return '.' in filename and \
