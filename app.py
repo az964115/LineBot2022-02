@@ -45,19 +45,20 @@ def index():
         if events[0]["type"] == "message":
             if events[0]["message"]["type"] == "text":
                 text = events[0]["message"]["text"]
-
-                if text == "養一隻貓吧":
-                    payload["messages"] = [getTaipei101ImageMessage()]
-                elif text == "小組成員":
+                if text == "小組成員":
                     payload["messages"] = [{"type": "text",
                                 "text": "開發中請稍後"}]
                 elif text == "TC-綜合巧克力禮盒":
-                    payload["messages"] = [getTaipei101ImageMessage()]
-                    payload["messages"] = [{"type": "text",
+                    payload["messages"] = [get1(),
+                                          {"type": "text",
                                 "text": "NT$ 550"}]
                 elif text == "TC-柴燒黑糖巧克力":
                     payload["messages"] = [{"type": "text",
                                 "text": "NT$ 300"}]
+                 elif text == "台北101":
+                    payload["messages"] = [getTaipei101ImageMessage(),
+                                           getTaipei101LocationMessage(),
+                                           getMRTVideoMessage()]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -161,7 +162,7 @@ def getCarouselMessage(data):
     message = dict()
     return message
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/378.jpg"):
+def get1(originalContentUrl=F"{end_point}/static/378.jpg"):
     return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
