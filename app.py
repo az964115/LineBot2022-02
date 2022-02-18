@@ -49,7 +49,8 @@ def index():
                 if text == "我自己的名字":
                     payload["messages"] = [getNameEmojiMessage()]
                 elif text == "養一隻貓吧":
-                    payload["messages"] = [getTaipei101ImageMessage()]
+                    payload["messages"] = [{"type": "image",
+                                "image": "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/112.jpg"}]
                 elif text == "小組成員":
                     payload["messages"] = [{"type": "text",
                                 "text": "開發中請稍後"}]
