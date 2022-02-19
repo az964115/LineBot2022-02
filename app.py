@@ -117,6 +117,9 @@ def index():
 #                                         "text": "TC-75%巧克力磚"
 #                                       }
                                   ]
+                              }
+                            }
+                        ]
                 else:
                     payload["messages"] = [
                             {
