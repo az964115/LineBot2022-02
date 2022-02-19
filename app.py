@@ -112,14 +112,14 @@ def index():
                                         "type": "message",
                                         "label": "TC-綜合巧克力禮盒",
                                         "text": "TC-綜合巧克力禮盒"
-                                      }
+                                      },
                                       {
                                         "type": "message",
                                         "label": "TC 85%巧克力禮盒",
                                         "text": "TC 85%巧克力禮盒"
                                       }
                                   ]
-                              }
+                               }
                             }
                         ]
                 elif text == "主選單":
@@ -156,14 +156,9 @@ def index():
                                         "type": "message",
                                         "label":"TC-85%巧克力磚",
                                         "text": "TC-85%巧克力磚"
-                                      } #,
-#                                       {
-#                                         "type": "message",
-#                                         "label": "TC-75%巧克力磚",
-#                                         "text": "TC-75%巧克力磚"
-#                                       }
+                                      }
                                   ]
-                              }
+                               }
                             }
                         ]
                 else:
