@@ -72,10 +72,6 @@ def index():
                     payload["messages"] = [get3(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
-                elif text == "TC-65%巧克力磚":
-                    payload["messages"] = [get3(),
-                                          {"type": "text",
-                                "text": "NT$ 300"}]
                 elif text == "TC 95%巧克力禮盒":
                     payload["messages"] = [get3(),
                                           {"type": "text",
@@ -105,13 +101,13 @@ def index():
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC 95%巧克力禮盒",
-                                        "text": "TC 95%巧克力禮盒"
+                                        "label": "TC-綜合巧克力禮盒",
+                                        "text": "TC-綜合巧克力禮盒"
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC-綜合巧克力禮盒",
-                                        "text": "TC-綜合巧克力禮盒"
+                                        "label": "TC 95%巧克力禮盒",
+                                        "text": "TC 95%巧克力禮盒"
                                       },
                                       {
                                         "type": "message",
@@ -122,6 +118,40 @@ def index():
                                }
                             }
                         ]
+                elif text == "巧克力磚":
+                    payload["messages"] = [
+                            {
+                                "type": "template",
+                                "altText": "This is a buttons template",
+                                "template": {
+                                  "type": "buttons",
+                                  "title": "巧克力磚",
+                                  "text": "熱門商品",
+                                  "actions": [
+                                      {
+                                        "type": "message",
+                                        "label": "TC-100%無糖巧克力磚",
+                                        "text": "TC-100%無糖巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-95%巧克力磚",
+                                        "text": "TC-95%巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-85%巧克力磚",
+                                        "text": "TC-85%巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-75%巧克力磚",
+                                        "text": "TC-75%巧克力磚"
+                                      }
+                                  ]
+                               }
+                            }
+                        ]    
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -141,6 +171,11 @@ def index():
                                         "type": "message",
                                         "label": "TC-柴燒黑糖巧克力",
                                         "text": "TC-柴燒黑糖巧克力"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "巧克力磚",
+                                        "text": "巧克力磚"
                                       }
                                   ]
                                }
