@@ -141,25 +141,10 @@ def index():
                                         "type": "message",
                                         "label": "TC-柴燒黑糖巧克力",
                                         "text": "TC-柴燒黑糖巧克力"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "TC-100%無糖巧克力磚",
-                                        "text": "TC-100%無糖巧克力磚"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "TC-95%巧克力磚",
-                                        "text": "TC-95%巧克力磚"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label":"TC-85%巧克力磚",
-                                        "text": "TC-85%巧克力磚"
                                       }
                                   ]
                                }
-                            }
+                           }
                         ]
                 else:
                     payload["messages"] = [
@@ -278,29 +263,29 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
-@app.route('/upload_file', methods=['POST'])
-def upload_file():
-    payload = dict()
-    if request.method == 'POST':
-        file = request.files['file']
-        print("json:", request.json)
-        form = request.form
-        age = form['age']
-        gender = ("男" if form['gender'] == "M" else "女") + "性"
-        if file:
-            filename = file.filename
-            img_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(img_path)
-            print(img_path)
-            payload["to"] = my_line_id
-            payload["messages"] = [getImageMessage(F"{end_point}/{img_path}"),
-                {
-                    "type": "text",
-                    "text": F"年紀：{age}\n性別：{gender}"
-                }
-            ]
-            pushMessage(payload)
-    return 'OK'
+# @app.route('/upload_file', methods=['POST'])
+# def upload_file():
+#     payload = dict()
+#     if request.method == 'POST':
+#         file = request.files['file']
+#         print("json:", request.json)
+#         form = request.form
+#         age = form['age']
+#         gender = ("男" if form['gender'] == "M" else "女") + "性"
+#         if file:
+#             filename = file.filename
+#             img_path = os.path.join(UPLOAD_FOLDER, filename)
+#             file.save(img_path)
+#             print(img_path)
+#             payload["to"] = my_line_id
+#             payload["messages"] = [getImageMessage(F"{end_point}/{img_path}"),
+#                 {
+#                     "type": "text",
+#                     "text": F"年紀：{age}\n性別：{gender}"
+#                 }
+#             ]
+#             pushMessage(payload)
+#     return 'OK'
 
 
 @app.route('/line_login', methods=['GET'])
