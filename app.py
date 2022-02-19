@@ -84,6 +84,34 @@ def index():
                     payload["messages"] = [get3(),
                                           {"type": "text",
                                 "text": "NT$ 899"}]
+                elif text == "TC-紅藜巧克力BAR":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-牛奶巧克力BAR":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-海鹽巧克力BAR":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-花生巧克力BAR":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 300"}]
+                elif text == "TC-95%黑巧克力冰淇淋":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 100"}]
+                elif text == "TC-抹茶拿鐵生巧克力":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 380"}]
+                elif text == "TC-經典生巧克力":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 380"}]
                 elif text == "禮盒":
                     payload["messages"] = [
                             {
@@ -151,7 +179,75 @@ def index():
                                   ]
                                }
                             }
-                        ]    
+                        ]
+                elif text == "巧克力BAR":
+                    payload["messages"] = [
+                            {
+                                "type": "template",
+                                "altText": "This is a buttons template",
+                                "template": {
+                                  "type": "buttons",
+                                  "title": "巧克力BAR",
+                                  "text": "熱門商品",
+                                  "actions": [
+                                      {
+                                        "type": "message",
+                                        "label": "TC-紅藜巧克力BAR",
+                                        "text": "TC-紅藜巧克力BAR"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-牛奶巧克力BAR",
+                                        "text": "TC-牛奶巧克力BAR"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-海鹽巧克力BAR",
+                                        "text": "TC-海鹽巧克力BAR"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-花生巧克力BAR",
+                                        "text": "TC-花生巧克力BAR"
+                                      }
+                                  ]
+                               }
+                            }
+                        ]
+                elif text == "其他系列":
+                    payload["messages"] = [
+                            {
+                                "type": "template",
+                                "altText": "This is a buttons template",
+                                "template": {
+                                  "type": "buttons",
+                                  "title": "其他系列",
+                                  "text": "商品清單",
+                                  "actions": [
+                                      {
+                                        "type": "message",
+                                        "label": "TC-柴燒黑糖巧克力",
+                                        "text": "TC-柴燒黑糖巧克力"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-95%黑巧克力冰淇淋",
+                                        "text": "TC-95%黑巧克力冰淇淋"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-抹茶拿鐵生巧克力",
+                                        "text": "TC-抹茶拿鐵生巧克力"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-經典生巧克力",
+                                        "text": "TC-經典生巧克力"
+                                      }
+                                  ]
+                               }
+                            }
+                        ]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -169,13 +265,18 @@ def index():
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC-柴燒黑糖巧克力",
-                                        "text": "TC-柴燒黑糖巧克力"
+                                        "label": "巧克力BAR",
+                                        "text": "巧克力BAR"
                                       },
                                       {
                                         "type": "message",
                                         "label": "巧克力磚",
                                         "text": "巧克力磚"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "其他系列",
+                                        "text": "其他系列"
                                       }
                                   ]
                                }
