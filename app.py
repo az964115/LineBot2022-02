@@ -76,6 +76,52 @@ def index():
                     payload["messages"] = [get3(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
+                elif text == "TC 95%巧克力禮盒":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 999"}]
+                elif text == "TC-綜合巧克力禮盒":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 900"}]
+                elif text == "TC 85%巧克力禮盒":
+                    payload["messages"] = [get3(),
+                                          {"type": "text",
+                                "text": "NT$ 899"}]
+                elif text == "禮盒":
+                    payload["messages"] = [
+                            {
+                                "type": "template",
+                                "altText": "This is a buttons template",
+                                "template": {
+                                  "type": "buttons",
+                                  "title": "巧克力禮盒",
+                                  "text": "熱門商品",
+                                  "actions": [
+                                      {
+                                        "type": "message",
+                                        "label": "TC-綜合巧克力禮盒",
+                                        "text": "TC-綜合巧克力禮盒"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC 95%巧克力禮盒",
+                                        "text": "TC 95%巧克力禮盒"
+                                      },
+                                      {
+                                        "type": "message",
+                                        "label": "TC-綜合巧克力禮盒",
+                                        "text": "TC-綜合巧克力禮盒"
+                                      }
+                                      {
+                                        "type": "message",
+                                        "label": "TC 85%巧克力禮盒",
+                                        "text": "TC 85%巧克力禮盒"
+                                      }
+                                  ]
+                              }
+                            }
+                        ]
                 elif text == "主選單":
                     payload["messages"] = [
                             {
@@ -88,8 +134,8 @@ def index():
                                   "actions": [
                                       {
                                         "type": "message",
-                                        "label": "TC-綜合巧克力禮盒",
-                                        "text": "TC-綜合巧克力禮盒"
+                                        "label": "禮盒",
+                                        "text": "禮盒"
                                       },
                                       {
                                         "type": "message",
