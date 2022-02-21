@@ -74,7 +74,7 @@ def index():
                                           {"type": "text",
                                 "text": "NT$ 999"}]
                 elif text == "TC-綜合巧克力禮盒":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get5(),
                                           {"type": "text",
                                 "text": "NT$ 900"}]
                 elif text == "TC 85%巧克力禮盒":
@@ -390,6 +390,16 @@ def getImageMessage4(originalContentUrl):
     message["type"] = "image"
     message["originalContentUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/4.jpg" #originalContentUrl
     message["previewImageUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/4.jpg" #originalContentUrl
+    return message
+
+def get5(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage5(originalContentUrl)
+
+def getImageMessage5(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20113307.jpg?width=1024&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20113307.jpg?width=1024&format=webp" #originalContentUrl
     return message
 
 def replyMessage(payload):
