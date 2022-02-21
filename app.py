@@ -78,35 +78,35 @@ def index():
                                           {"type": "text",
                                 "text": "NT$ 900"}]
                 elif text == "TC 85%巧克力禮盒":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get6(),
                                           {"type": "text",
                                 "text": "NT$ 899"}]
                 elif text == "TC-紅藜巧克力BAR":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get7(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "TC-牛奶巧克力BAR":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get7(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "TC-海鹽巧克力BAR":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get7(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "TC-花生巧克力BAR":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get7(),
                                           {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "TC-95%黑巧克力冰淇淋":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get8(),
                                           {"type": "text",
                                 "text": "NT$ 100"}]
                 elif text == "TC-抹茶拿鐵生巧克力":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get9(),
                                           {"type": "text",
                                 "text": "NT$ 380"}]
                 elif text == "TC-經典生巧克力":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get10(),
                                           {"type": "text",
                                 "text": "NT$ 380"}]
                 elif text == "禮盒":
@@ -401,6 +401,57 @@ def getImageMessage5(originalContentUrl):
     message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20113307.jpg?width=1024&format=webp" #originalContentUrl
     message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20113307.jpg?width=1024&format=webp" #originalContentUrl
     return message
+
+def get6(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage6(originalContentUrl)
+
+def getImageMessage6(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20058553.jpg?width=480&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20058553.jpg?width=480&format=webp" #originalContentUrl
+    return message
+
+def get7(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage7(originalContentUrl)
+
+def getImageMessage7(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20280325.png?width=480&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20280325.png?width=480&format=webp" #originalContentUrl
+    return message
+
+def get8(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage8(originalContentUrl)
+
+def getImageMessage8(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20212428.jpg?width=480&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20212428.jpg?width=480&format=webp" #originalContentUrl
+    return message
+
+def get9(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage9(originalContentUrl)
+
+def getImageMessage9(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20123932.jpg?width=480&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20123932.jpg?width=480&format=webp" #originalContentUrl
+    return message
+
+def get10(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage10(originalContentUrl)
+
+def getImageMessage10(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://cdn.store-assets.com/s/632442/i/20280445.jpg?width=480&format=webp" #originalContentUrl
+    message["previewImageUrl"] = "https://cdn.store-assets.com/s/632442/i/20280445.jpg?width=480&format=webp" #originalContentUrl
+    return message
+
 
 def replyMessage(payload):
     response = requests.post("https://api.line.me/v2/bot/message/reply",headers=HEADER,data=json.dumps(payload))
