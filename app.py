@@ -45,10 +45,7 @@ def index():
         if events[0]["type"] == "message":
             if events[0]["message"]["type"] == "text":
                 text = events[0]["message"]["text"]
-                if text == "小組成員":
-                    payload["messages"] = [{"type": "text",
-                                "text": "開發中請稍後"}]
-                elif text == "TC-綜合巧克力禮盒":
+                if text == "TC-綜合巧克力禮盒(小盒/12片)":
                     payload["messages"] = [get1(),
                                           {"type": "text",
                                 "text": "NT$ 550"}]
@@ -73,7 +70,7 @@ def index():
                                           {"type": "text",
                                 "text": "NT$ 300"}]
                 elif text == "TC 95%巧克力禮盒":
-                    payload["messages"] = [get3(),
+                    payload["messages"] = [get4(),
                                           {"type": "text",
                                 "text": "NT$ 999"}]
                 elif text == "TC-綜合巧克力禮盒":
@@ -129,7 +126,7 @@ def index():
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC-綜合巧克力禮盒",
+                                        "label": "TC-綜合巧克力禮盒(小盒/12片)",
                                         "text": "TC-綜合巧克力禮盒"
                                       },
                                       {
@@ -383,6 +380,16 @@ def getImageMessage3(originalContentUrl):
     message["type"] = "image"
     message["originalContentUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/3.jpg?raw=true" #originalContentUrl
     message["previewImageUrl"] = "https://github.com/az964115/LineBot2022-02/blob/main/static/3.jpg?raw=true" #originalContentUrl
+    return message
+
+def get4(originalContentUrl=F"{end_point}/static/378.jp"):
+    return getImageMessage4(originalContentUrl)
+
+def getImageMessage4(originalContentUrl):
+    message = dict()
+    message["type"] = "image"
+    message["originalContentUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/4.jpg" #originalContentUrl
+    message["previewImageUrl"] = "https://raw.githubusercontent.com/az964115/LineBot2022-02/main/static/4.jpg" #originalContentUrl
     return message
 
 def replyMessage(payload):
