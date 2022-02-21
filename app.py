@@ -287,60 +287,60 @@ def index():
                             }
                         ]
                 replyMessage(payload)
-            elif events[0]["message"]["type"] == "location":
-                title = events[0]["message"]["title"]
-                latitude = events[0]["message"]["latitude"]
-                longitude = events[0]["message"]["longitude"]
-                payload["messages"] = [getLocationConfirmMessage(title, latitude, longitude)]
-                replyMessage(payload)
-        elif events[0]["type"] == "postback":
-            if "params" in events[0]["postback"]:
-                reservedTime = events[0]["postback"]["params"]["datetime"].replace("T", " ")
-                payload["messages"] = [
-                        {
-                            "type": "text",
-                            "text": F"已完成預約於{reservedTime}的叫車服務"
-                        }
-                    ]
-                replyMessage(payload)
-            else:
-                data = json.loads(events[0]["postback"]["data"])
-                action = data["action"]
-                if action == "get_near":
-                    data["action"] = "get_detail"
-                    payload["messages"] = [getCarouselMessage(data)]
-                elif action == "get_detail":
-                    del data["action"]
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getMRTVideoMessage(),
-                                           getCallCarMessage(data)]
-                replyMessage(payload)
+#             elif events[0]["message"]["type"] == "location":
+#                 title = events[0]["message"]["title"]
+#                 latitude = events[0]["message"]["latitude"]
+#                 longitude = events[0]["message"]["longitude"]
+#                 payload["messages"] = [getLocationConfirmMessage(title, latitude, longitude)]
+#                 replyMessage(payload)
+#         elif events[0]["type"] == "postback":
+#             if "params" in events[0]["postback"]:
+#                 reservedTime = events[0]["postback"]["params"]["datetime"].replace("T", " ")
+#                 payload["messages"] = [
+#                         {
+#                             "type": "text",
+#                             "text": F"已完成預約於{reservedTime}的叫車服務"
+#                         }
+#                     ]
+#                 replyMessage(payload)
+#             else:
+#                 data = json.loads(events[0]["postback"]["data"])
+#                 action = data["action"]
+#                 if action == "get_near":
+#                     data["action"] = "get_detail"
+#                     payload["messages"] = [getCarouselMessage(data)]
+#                 elif action == "get_detail":
+#                     del data["action"]
+#                     payload["messages"] = [getTaipei101ImageMessage(),
+#                                            getTaipei101LocationMessage(),
+#                                            getMRTVideoMessage(),
+#                                            getCallCarMessage(data)]
+#                 replyMessage(payload)
 
-    return 'OK'
-
-
-@app.route("/callback", methods=['POST'])
-def callback():
-    signature = request.headers['X-Line-Signature']
-    body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
-
-    try:
-        handler.handle(body, signature)
-
-    except InvalidSignatureError:
-        abort(400)
-
-    return 'OK'
+#     return 'OK'
 
 
-@handler.add(MessageEvent, message=TextMessage)
-def pretty_echo(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text)
-        )
+# @app.route("/callback", methods=['POST'])
+# def callback():
+#     signature = request.headers['X-Line-Signature']
+#     body = request.get_data(as_text=True)
+#     app.logger.info("Request body: " + body)
+
+#     try:
+#         handler.handle(body, signature)
+
+#     except InvalidSignatureError:
+#         abort(400)
+
+#     return 'OK'
+
+
+# @handler.add(MessageEvent, message=TextMessage)
+# def pretty_echo(event):
+#     line_bot_api.reply_message(
+#         event.reply_token,
+#         TextSendMessage(text=event.message.text)
+#         )
 
 
 @app.route("/sendTextMessageToMe", methods=['POST'])
