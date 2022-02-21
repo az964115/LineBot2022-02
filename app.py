@@ -127,7 +127,7 @@ def index():
                                       {
                                         "type": "message",
                                         "label": "TC-綜合巧克力禮盒(小盒/12片)",
-                                        "text": "TC-綜合巧克力禮盒"
+                                        "text": "TC-綜合巧克力禮盒(小盒/12片)"
                                       },
                                       {
                                         "type": "message",
