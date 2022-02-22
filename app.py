@@ -233,13 +233,13 @@ def index():
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC-抹茶拿鐵生巧克力",
-                                        "text": "TC-抹茶拿鐵生巧克力"
+                                        "label": "TC-經典生巧克力",
+                                        "text": "TC-經典生巧克力"
                                       },
                                       {
                                         "type": "message",
-                                        "label": "TC-經典生巧克力",
-                                        "text": "TC-經典生巧克力"
+                                        "label": "TC-抹茶拿鐵生巧克力",
+                                        "text": "TC-抹茶拿鐵生巧克力"
                                       }
                                   ]
                                }
