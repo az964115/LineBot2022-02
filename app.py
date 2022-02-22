@@ -117,7 +117,7 @@ def index():
                                 "template": {
                                   "type": "buttons",
                                   "title": "巧克力禮盒",
-                                  "text": "熱門商品",
+                                  "text": "熱門禮盒",
                                   "actions": [
                                       {
                                         "type": "message",
